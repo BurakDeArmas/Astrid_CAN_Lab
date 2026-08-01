@@ -7,6 +7,7 @@
 constexpr uint8_t MCP2515_CS_PIN = 10;
 constexpr uint16_t MESSAGE_ID = 0x100;
 constexpr uint32_t SEND_PERIOD_MS = 500;
+constexpr uint8_t COUNTER_FREEZE_BUTTON_PIN = 7;
 
 // Uno için SPI hızını 8 MHz'e düşürüyoruz.
 MCP2515 mcp2515(MCP2515_CS_PIN, 8000000);
@@ -69,7 +70,7 @@ void setup()
     Serial.println(F("============================"));
     Serial.println(F("UNO-A CAN GONDERICI"));
     Serial.println(F("============================"));
-
+    pinMode(COUNTER_FREEZE_BUTTON_PIN, INPUT_PULLUP);
     pinMode(MCP2515_CS_PIN, OUTPUT);
     digitalWrite(MCP2515_CS_PIN, HIGH);
 
@@ -120,7 +121,17 @@ void loop()
         Serial.print(F(" | Counter="));
         Serial.println(counter);
 
-        counter++;
+        const bool freezeCounter =
+    digitalRead(COUNTER_FREEZE_BUTTON_PIN) == LOW;
+
+if (freezeCounter)
+{
+    Serial.println(F("FAULT INJECTION: ALIVE COUNTER FROZEN"));
+}
+else
+{
+    counter++;
+}
     }
     else
     {
