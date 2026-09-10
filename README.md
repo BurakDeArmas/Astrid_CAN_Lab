@@ -4,7 +4,7 @@ Arduino ve MCP2515 ile CAN haberleşmesini adım adım geliştiren gömülü sis
 laboratuvarı. Deneyler heartbeat takibinden üç düğümlü komut, aktüatör ve
 gösterge ağına ilerler. Firmware Arduino C++ ile yazılmıştır.
 
-## Son deney: üç düğümlü CAN ağı
+## Üç düğümlü CAN ağı (EXP04)
 
 ```mermaid
 flowchart LR
@@ -27,6 +27,20 @@ uygulanan komutu ve bağlantı durumunu 16x2 LCD'de gösterir.
 | EXP02 | Alive counter, sayaç dondurma, servo bekleme konumu | [Gönderici](firmware/exp02_sender/exp02_sender.ino) ve [alıcı](firmware/exp02_receiver/exp02_receiver.ino) mevcut; deney dokümanı tamamlanacak |
 | [EXP03](docs/experiments/EXP03_CAN_Potentiometer_Servo.md) | Potansiyometre ile CAN üzerinden servo kontrolü | Kullanıcı donanım denemesini tamamladı: 9 Eylül 2026 |
 | [EXP04](docs/experiments/EXP04_Three_Node_CAN_Display.md) | Üç düğümlü ağ ve LCD durum takibi | Üç hedef derlendi; kullanıcı donanım başarısını bildirdi: 10 Eylül 2026 |
+| [EXP05](docs/experiments/EXP05_CAN_Fault_Injection.md) | Butonla hata enjeksiyonu ve durum bazlı toparlanma | Üç hedef derlendi, otomatik test geçti; T01–T07 kullanıcı bildirimiyle başarılı: 10 Eylül 2026 |
+
+## Son deney: EXP05 hata enjeksiyonu
+
+Üç butonla sayaç donması, geçersiz ADC ve komut yayınının kesilmesi üretilir.
+Aktüatör hata nedenini CAN üzerinden yayınlar; Nano LCD'de gösterir. Hata
+halinde 90° komutu uygulanır, normal yayına dönülünce doğrulama sonrası
+kontrol geri gelir. EXP05 farklı kimlikler kullanır: komut 0x130, durum 0x140.
+
+[EXP05 bağlantı, protokol ve test sonuçları](docs/experiments/EXP05_CAN_Fault_Injection.md)
+üç kartın kodlarına giden yolları içerir. Göndericiye D2/D3/D4 ile GND arasına
+üç buton eklenir. Kullanıcı buton ve toparlanma denemelerinin geçtiğini bildirdi.
+Ayrıca [otomatik durum mantığı testi](tests/exp05_monitor_test.cpp) sayaç/zaman
+taşmasını, hata sürekliliğini, timeout sınırını ve toparlanmayı kontrol eder.
 
 ## EXP04'ü çalıştırma
 
@@ -53,7 +67,8 @@ kontrol et ve gerektiğinde ilgili sketch'teki saat ayarını değiştir.
 - Standart CAN kimlikleri, bayt düzeyinde paketleme ve bağımsız mesaj sayaçları.
 - DLC, işaret baytı ve veri aralığı kontrolü; üç doğru sayaç adımıyla toparlanma.
 - EXP03/04'te 500 ms ilerleme timeout'u ve hata halinde 90° servo komutu.
-- EXP04 için Arduino AVR 1.8.7 ile Uno/Uno/Nano derlemesi başarılı.
+- EXP04/05 için Arduino AVR 1.8.7 ile Uno/Uno/Nano derlemesi başarılı.
+- EXP05’te çerçeve yokluğu timeout’u, ayrı sayaç/veri hataları ve otomatik durum testi.
 
 Donanım başarı kayıtları projeyi kuran kullanıcının bildirimlerine dayanır;
 ayrıntılı seri logları ve ölçüm kayıtları henüz depoya eklenmedi. LCD'deki açı
