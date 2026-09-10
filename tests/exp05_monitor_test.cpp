@@ -1,6 +1,6 @@
 #include <assert.h>
 #include <stdio.h>
-#include "../firmware/exp05_actuator/CommandMonitor.h"
+#include "../firmware/exp5/receiver/CommandMonitor.h"
 
 void send(CommandMonitor &m, uint32_t now, uint8_t counter, uint16_t adc = 1023) {
   const uint8_t data[] = {0xA5, counter, static_cast<uint8_t>(adc), static_cast<uint8_t>(adc >> 8)};

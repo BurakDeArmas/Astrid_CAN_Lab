@@ -29,9 +29,9 @@ Buton bırakılınca normal yayın geri gelir; aç/kapa kilitlemesi yoktur.
 
 | Kart | Yüklenecek sketch |
 |---|---|
-| Uno A | firmware/exp05_sender/exp05_sender.ino |
-| Uno B | firmware/exp05_actuator/exp05_actuator.ino |
-| Nano | firmware/exp05_display/exp05_display.ino |
+| Uno A | firmware/exp5/sender/sender.ino |
+| Uno B | firmware/exp5/receiver/receiver.ino |
+| Nano | firmware/exp5/display/display.ino |
 
 Aktüatör klasöründeki CommandMonitor.h dosyasını sketch'in yanında tut.
 IDE'de Uno/Uno/Nano seç, her karta doğru porttan yükle. Seri monitör 115200.
