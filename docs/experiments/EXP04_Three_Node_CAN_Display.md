@@ -11,9 +11,9 @@ Nano 33 gibi 3.3V kartlar bu bağlantı tablosunun kapsamında değildir.
 
 | Kart | Sketch | İşlev |
 |---|---|---|
-| Uno A | firmware/exp04_sender/exp04_sender.ino | A0 potunu CAN'a gönderir |
-| Uno B | firmware/exp04_actuator/exp04_actuator.ino | Servo kontrolü ve durum yayını |
-| Nano | firmware/exp04_display/exp04_display.ino | Komut ve durumu LCD'de gösterir |
+| Uno A | firmware/exp4/sender/sender.ino | A0 potunu CAN'a gönderir |
+| Uno B | firmware/exp4/receiver/receiver.ino | Servo kontrolü ve durum yayını |
+| Nano | firmware/exp4/display/display.ino | Komut ve durumu LCD'de gösterir |
 
 EXP01–03 dosyaları korunur. Bu deney için üç karta da EXP04 sketch'lerini yükle.
 

@@ -24,7 +24,7 @@ uygulanan komutu ve bağlantı durumunu 16x2 LCD'de gösterir.
 | Deney | İçerik | Kayıt durumu |
 |---|---|---|
 | [EXP01](docs/experiments/EXP01_CAN_Heartbeat_Timeout.md) | Heartbeat ve timeout | Firmware ve deney dokümanı mevcut |
-| EXP02 | Alive counter, sayaç dondurma, servo bekleme konumu | [Gönderici](firmware/exp02_sender/exp02_sender.ino) ve [alıcı](firmware/exp02_receiver/exp02_receiver.ino) mevcut; deney dokümanı tamamlanacak |
+| EXP02 | Alive counter, sayaç dondurma, servo bekleme konumu | [Gönderici](firmware/exp2/sender/sender.ino) ve [alıcı](firmware/exp2/receiver/receiver.ino) mevcut; deney dokümanı tamamlanacak |
 | [EXP03](docs/experiments/EXP03_CAN_Potentiometer_Servo.md) | Potansiyometre ile CAN üzerinden servo kontrolü | Kullanıcı donanım denemesini tamamladı: 9 Eylül 2026 |
 | [EXP04](docs/experiments/EXP04_Three_Node_CAN_Display.md) | Üç düğümlü ağ ve LCD durum takibi | Üç hedef derlendi; kullanıcı donanım başarısını bildirdi: 10 Eylül 2026 |
 | [EXP05](docs/experiments/EXP05_CAN_Fault_Injection.md) | Butonla hata enjeksiyonu ve durum bazlı toparlanma | Üç hedef derlendi, otomatik test geçti; T01–T07 kullanıcı bildirimiyle başarılı: 10 Eylül 2026 |
@@ -52,9 +52,9 @@ beslemesi, I2C arkalıklı 16x2 LCD ve LED/direnç.
    takip et. CAN hattının yalnız iki fiziksel ucunda 120 ohm sonlandırma kullan.
 2. Arduino IDE'ye [autowp MCP2515](https://github.com/autowp/arduino-mcp2515),
    Arduino Servo ve [hd44780](https://github.com/duinoWitchery/hd44780) kütüphanelerini kur.
-3. [Göndericiyi](firmware/exp04_sender/exp04_sender.ino) Uno A'ya,
-   [aktüatörü](firmware/exp04_actuator/exp04_actuator.ino) Uno B'ye,
-   [göstergeyi](firmware/exp04_display/exp04_display.ino) Nano'ya yükle.
+3. [Göndericiyi](firmware/exp4/sender/sender.ino) Uno A'ya,
+   [aktüatörü](firmware/exp4/receiver/receiver.ino) Uno B'ye,
+   [göstergeyi](firmware/exp4/display/display.ino) Nano'ya yükle.
 4. Seri monitörü 115200 baud aç. Potu çevirerek servo komutunu ve LCD'yi izle;
    ardından rehberdeki bağlantı kesilmesi senaryolarını uygula.
 

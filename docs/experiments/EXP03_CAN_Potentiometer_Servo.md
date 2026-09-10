@@ -43,8 +43,8 @@ LED: D7 → 330 ohm → anot, katot → GND. Fault/bekleme durumunda yanar.
 1. Arduino IDE'de Arduino AVR Boards / Arduino Uno seç.
 2. `mcp2515.h` sağlayan autowp/arduino-mcp2515 kütüphanesini ve Arduino Servo
    kütüphanesini kur. Farklı API kullanan MCP_CAN kütüphanesi uygun değildir.
-3. Uno A'ya `firmware/exp03_sender/exp03_sender.ino` yükle.
-4. Uno B'ye `firmware/exp03_receiver/exp03_receiver.ino` yükle.
+3. Uno A'ya `firmware/exp3/sender/sender.ino` yükle.
+4. Uno B'ye `firmware/exp3/receiver/receiver.ino` yükle.
 5. Her yüklemede doğru USB portunu seç. Seri monitör 115200 baud.
 6. Alıcı monitöründe önce SYNC, ardından ACTIVE ve ADC/angle satırları beklenir.
 
