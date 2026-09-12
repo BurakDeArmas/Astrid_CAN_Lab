@@ -28,8 +28,20 @@ uygulanan komutu ve bağlantı durumunu 16x2 LCD'de gösterir.
 | [EXP03](docs/experiments/EXP03_CAN_Potentiometer_Servo.md) | Potansiyometre ile CAN üzerinden servo kontrolü | Kullanıcı donanım denemesini tamamladı: 9 Eylül 2026 |
 | [EXP04](docs/experiments/EXP04_Three_Node_CAN_Display.md) | Üç düğümlü ağ ve LCD durum takibi | Üç hedef derlendi; kullanıcı donanım başarısını bildirdi: 10 Eylül 2026 |
 | [EXP05](docs/experiments/EXP05_CAN_Fault_Injection.md) | Butonla hata enjeksiyonu ve durum bazlı toparlanma | Üç hedef derlendi, otomatik test geçti; T01–T07 kullanıcı bildirimiyle başarılı: 10 Eylül 2026 |
+| [EXP06](docs/experiments/EXP06_CAN_Priority_Load.md) | Trafik artırma, alıcı taşması, sıra penceresi ve toparlanma | Üç sketch derlendi, sıra takip testi geçti; donanım gözlemleri kaydedildi: 12 Eylül 2026 |
 
-## Son deney: EXP05 hata enjeksiyonu
+## Son deney: EXP06 trafik ve alıcı taşması
+
+İki Uno farklı CAN kimlikleriyle artan hızda mesaj gönderir; Nano mesajları,
+geç gelen sıra numaralarını ve MCP2515 taşma bayraklarını izler. Alıcıyı
+butonla yavaşlatma ve ardından toparlanma, seri monitör görüntülerinde gözlendi.
+32 numaralık sıra penceresi, pencere içinde geç gelen mesajları kayıp saymaz.
+Arbitration doğrudan ölçülmedi; mesaj sayıları kesin hat doluluk oranı değildir.
+
+[EXP06 kurulum ve sonuçlar](docs/experiments/EXP06_CAN_Priority_Load.md) ·
+[Kodlar](firmware/exp6) · [Otomatik sıra takip testi](tests/exp06_sequence_test.cpp)
+
+## EXP05 hata enjeksiyonu
 
 Üç butonla sayaç donması, geçersiz ADC ve komut yayınının kesilmesi üretilir.
 Aktüatör hata nedenini CAN üzerinden yayınlar; Nano LCD'de gösterir. Hata
@@ -71,7 +83,8 @@ kontrol et ve gerektiğinde ilgili sketch'teki saat ayarını değiştir.
 - EXP05’te çerçeve yokluğu timeout’u, ayrı sayaç/veri hataları ve otomatik durum testi.
 
 Donanım başarı kayıtları projeyi kuran kullanıcının bildirimlerine dayanır;
-ayrıntılı seri logları ve ölçüm kayıtları henüz depoya eklenmedi. LCD'deki açı
+EXP06 için ekran görüntülerinden seçili seri satırlar dokümana aktarıldı;
+kesintisiz log dosyaları henüz eklenmedi. LCD'deki açı
 gerçek mil açısının ölçümü değil, yazılımın servoya verdiği komuttur.
 90° konumu enerji kesme sağlamaz. Bu bir masaüstü öğrenme prototipidir;
 otomatik bus-off toparlanması ve gerçek araç üzerinde doğrulama kapsamda değildir.
