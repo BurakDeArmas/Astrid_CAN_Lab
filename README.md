@@ -29,8 +29,19 @@ uygulanan komutu ve bağlantı durumunu 16x2 LCD'de gösterir.
 | [EXP04](docs/experiments/EXP04_Three_Node_CAN_Display.md) | Üç düğümlü ağ ve LCD durum takibi | Üç hedef derlendi; kullanıcı donanım başarısını bildirdi: 10 Eylül 2026 |
 | [EXP05](docs/experiments/EXP05_CAN_Fault_Injection.md) | Butonla hata enjeksiyonu ve durum bazlı toparlanma | Üç hedef derlendi, otomatik test geçti; T01–T07 kullanıcı bildirimiyle başarılı: 10 Eylül 2026 |
 | [EXP06](docs/experiments/EXP06_CAN_Priority_Load.md) | Trafik artırma, alıcı taşması, sıra penceresi ve toparlanma | Üç sketch derlendi, sıra takip testi geçti; donanım gözlemleri kaydedildi: 12 Eylül 2026 |
+| [EXP07](docs/experiments/EXP07_CAN_Filters_Masks.md) | MCP2515 kabul filtreleri, maskeler ve donanım/yazılım elemesi | Üç sketch derlendi; kullanıcı tamamlandığını bildirdi: 17 Eylül 2026 |
 
-## Son deney: EXP06 trafik ve alıcı taşması
+## Son deney: EXP07 filtreler ve maskeler
+
+İki Uno altı farklı standart CAN ID'siyle mesaj yayınlar. Nano butonla tüm
+standart ID'leri, yalnız 0x100'ü veya 0x100–0x10F grubunu donanımda kabul eder.
+Dördüncü mod tüm mesajları okuyup yazılımda yalnız 0x100'ü tutar; donanımdan
+okunan ve uygulamanın tuttuğu mesaj sayıları ayrı raporlanır.
+
+[EXP07 kurulum ve test kaydı](docs/experiments/EXP07_CAN_Filters_Masks.md) ·
+[Kodlar](firmware/exp7)
+
+## EXP06 trafik ve alıcı taşması
 
 İki Uno farklı CAN kimlikleriyle artan hızda mesaj gönderir; Nano mesajları,
 geç gelen sıra numaralarını ve MCP2515 taşma bayraklarını izler. Alıcıyı
