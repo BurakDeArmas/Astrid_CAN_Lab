@@ -30,8 +30,18 @@ uygulanan komutu ve bağlantı durumunu 16x2 LCD'de gösterir.
 | [EXP05](docs/experiments/EXP05_CAN_Fault_Injection.md) | Butonla hata enjeksiyonu ve durum bazlı toparlanma | Üç hedef derlendi, otomatik test geçti; T01–T07 kullanıcı bildirimiyle başarılı: 10 Eylül 2026 |
 | [EXP06](docs/experiments/EXP06_CAN_Priority_Load.md) | Trafik artırma, alıcı taşması, sıra penceresi ve toparlanma | Üç sketch derlendi, sıra takip testi geçti; donanım gözlemleri kaydedildi: 12 Eylül 2026 |
 | [EXP07](docs/experiments/EXP07_CAN_Filters_Masks.md) | MCP2515 kabul filtreleri, maskeler ve donanım/yazılım elemesi | Üç sketch derlendi; kullanıcı tamamlandığını bildirdi: 17 Eylül 2026 |
+| [EXP08](docs/experiments/EXP08_CAN_ACK_Error_Counters.md) | ACK, listen-only ve hata sayaçları | Üç sketch derlendi; kullanıcı tamamlandığını bildirdi: 19 Eylül 2026; ayrı log aktarılmadı |
 
-## Son deney: EXP07 filtreler ve maskeler
+## Son deney: EXP08 ACK ve hata sayaçları
+
+Bir Uno yayın yapar, ikinci Uno normal kabul, normal filtreleme ve listen-only
+modları arasında geçer. Nano sessiz gözlemcidir. Gönderim isteği ile TX0IF
+üzerinden tamamlanma ayrı sayılır; TXREQ, TEC, REC ve EFLG izlenir.
+
+[EXP08 rehberi ve kayıt](docs/experiments/EXP08_CAN_ACK_Error_Counters.md) ·
+[Kodlar](firmware/exp8)
+
+## EXP07 filtreler ve maskeler
 
 İki Uno altı farklı standart CAN ID'siyle mesaj yayınlar. Nano butonla tüm
 standart ID'leri, yalnız 0x100'ü veya 0x100–0x10F grubunu donanımda kabul eder.
