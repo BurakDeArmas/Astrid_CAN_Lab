@@ -31,8 +31,17 @@ uygulanan komutu ve bağlantı durumunu 16x2 LCD'de gösterir.
 | [EXP06](docs/experiments/EXP06_CAN_Priority_Load.md) | Trafik artırma, alıcı taşması, sıra penceresi ve toparlanma | Üç sketch derlendi, sıra takip testi geçti; donanım gözlemleri kaydedildi: 12 Eylül 2026 |
 | [EXP07](docs/experiments/EXP07_CAN_Filters_Masks.md) | MCP2515 kabul filtreleri, maskeler ve donanım/yazılım elemesi | Üç sketch derlendi; kullanıcı tamamlandığını bildirdi: 17 Eylül 2026 |
 | [EXP08](docs/experiments/EXP08_CAN_ACK_Error_Counters.md) | ACK, listen-only ve hata sayaçları | Üç sketch derlendi; kullanıcı tamamlandığını bildirdi: 19 Eylül 2026; ayrı log aktarılmadı |
+| [EXP09](docs/experiments/EXP09_CAN_Bit_Timing.md) | Kristal, CNF register ve bit zamanlaması | Üç sketch derlendi; genel tamamlanma bildirimi: 21 Eylül 2026; ayrı ölçüm/log aktarılmadı |
 
-## Son deney: EXP08 ACK ve hata sayaçları
+## Son deney: EXP09 bit zamanlaması
+
+MCP2515 CNF register'ları okunarak varsayılan kristal frekansından TQ, bit
+süresi ve örnekleme noktası hesaplanır. Rehber, sessiz gözlemcide bitrate
+uyumsuzluğu ve enerjisiz sonlandırma kontrolünü de içerir.
+
+[EXP09 rehberi ve kayıt](docs/experiments/EXP09_CAN_Bit_Timing.md) · [Kodlar](firmware/exp9)
+
+## EXP08 ACK ve hata sayaçları
 
 Bir Uno yayın yapar, ikinci Uno normal kabul, normal filtreleme ve listen-only
 modları arasında geçer. Nano sessiz gözlemcidir. Gönderim isteği ile TX0IF
