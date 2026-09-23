@@ -1,0 +1,20 @@
+VERSION "EXP10 v1"
+
+NS_ :
+    CM_
+    VAL_
+
+BS_:
+BU_: Sender Receiver Observer
+
+BO_ 768 SensorDemo: 8 Sender
+ SG_ Version : 0|8@1+ (1,0) [1|1] "" Receiver,Observer
+ SG_ Counter : 8|8@1+ (1,0) [0|255] "" Receiver,Observer
+ SG_ Temperature : 16|16@1- (0.1,0) [-40|125] "degC" Receiver,Observer
+ SG_ Voltage : 32|16@1+ (0.001,0) [0|5] "V" Receiver,Observer
+ SG_ SyntheticTemperature : 48|1@1+ (1,0) [0|1] "" Receiver,Observer
+ SG_ ReservedFlags : 49|7@1+ (1,0) [0|0] "" Receiver,Observer
+ SG_ Reserved : 56|8@1+ (1,0) [0|0] "" Receiver,Observer
+
+CM_ BO_ 768 "Standard ID 0x300. Temperature is synthetic; voltage assumes 5V ADC reference. Version and reserved fields are validated in firmware.";
+VAL_ 768 SyntheticTemperature 0 "Measured" 1 "Synthetic";

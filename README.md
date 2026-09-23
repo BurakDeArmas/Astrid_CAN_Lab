@@ -32,8 +32,17 @@ uygulanan komutu ve bağlantı durumunu 16x2 LCD'de gösterir.
 | [EXP07](docs/experiments/EXP07_CAN_Filters_Masks.md) | MCP2515 kabul filtreleri, maskeler ve donanım/yazılım elemesi | Üç sketch derlendi; kullanıcı tamamlandığını bildirdi: 17 Eylül 2026 |
 | [EXP08](docs/experiments/EXP08_CAN_ACK_Error_Counters.md) | ACK, listen-only ve hata sayaçları | Üç sketch derlendi; kullanıcı tamamlandığını bildirdi: 19 Eylül 2026; ayrı log aktarılmadı |
 | [EXP09](docs/experiments/EXP09_CAN_Bit_Timing.md) | Kristal, CNF register ve bit zamanlaması | Üç sketch derlendi; genel tamamlanma bildirimi: 21 Eylül 2026; ayrı ölçüm/log aktarılmadı |
+| [EXP10](docs/experiments/EXP10_CAN_Protocol_DBC.md) | Byte sırası, signed değer, ölçekleme, DBC ve canlı okuyucu | Kullanıcı başarı bildirimi: 23 Eylül 2026; 54 DBC vektörü ve üç okuyucu testi geçti |
 
-## Son deney: EXP09 bit zamanlaması
+## Son deney: EXP10 mesaj sözleşmesi ve DBC
+
+Signed sıcaklık test değeri, pot gerilimi tahmini, sayaç ve bayraklar sekiz
+baytlık sözleşmede taşınır. DBC aynı veriyi bilgisayarda çözer. Üç kartın
+firmware'i, canlı seri okuyucu ve bağımsız DBC testleri birlikte bulunur.
+
+[EXP10 rehberi](docs/experiments/EXP10_CAN_Protocol_DBC.md) · [Kodlar](firmware/exp10) · [DBC](docs/protocol/exp10.dbc)
+
+## EXP09 bit zamanlaması
 
 MCP2515 CNF register'ları okunarak varsayılan kristal frekansından TQ, bit
 süresi ve örnekleme noktası hesaplanır. Rehber, sessiz gözlemcide bitrate
