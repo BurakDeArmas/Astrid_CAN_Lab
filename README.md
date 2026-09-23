@@ -33,8 +33,16 @@ uygulanan komutu ve bağlantı durumunu 16x2 LCD'de gösterir.
 | [EXP08](docs/experiments/EXP08_CAN_ACK_Error_Counters.md) | ACK, listen-only ve hata sayaçları | Üç sketch derlendi; kullanıcı tamamlandığını bildirdi: 19 Eylül 2026; ayrı log aktarılmadı |
 | [EXP09](docs/experiments/EXP09_CAN_Bit_Timing.md) | Kristal, CNF register ve bit zamanlaması | Üç sketch derlendi; genel tamamlanma bildirimi: 21 Eylül 2026; ayrı ölçüm/log aktarılmadı |
 | [EXP10](docs/experiments/EXP10_CAN_Protocol_DBC.md) | Byte sırası, signed değer, ölçekleme, DBC ve canlı okuyucu | Kullanıcı başarı bildirimi: 23 Eylül 2026; 54 DBC vektörü ve üç okuyucu testi geçti |
+| [EXP11](docs/experiments/EXP11_Standard_Extended_ID.md) | 11/29 bit kimlikler, STD/EXT formatları ve filtreleme | Üç sketch derlendi; kullanıcı tamamlanma bildirimi: 23 Eylül 2026; ayrı log aktarılmadı |
 
-## Son deney: EXP10 mesaj sözleşmesi ve DBC
+## Son deney: EXP11 standart ve genişletilmiş kimlikler
+
+İki Uno standart ve genişletilmiş çerçeveler yayınlar; Nano dört filtre moduyla
+formatı ve kimliği ayırır. Aynı sayısal ID iki formatta ayrı mesaj olarak izlenir.
+
+[EXP11 rehberi](docs/experiments/EXP11_Standard_Extended_ID.md) · [Kodlar](firmware/exp11)
+
+## EXP10 mesaj sözleşmesi ve DBC
 
 Signed sıcaklık test değeri, pot gerilimi tahmini, sayaç ve bayraklar sekiz
 baytlık sözleşmede taşınır. DBC aynı veriyi bilgisayarda çözer. Üç kartın
