@@ -7,20 +7,6 @@ uint32_t counts[6] = {}, readCount = 0, kept = 0, dropped = 0, unexpected = 0, o
 uint32_t lastReportMs = 0;
 const uint16_t ids[] = {0x100, 0x101, 0x10F, 0x200, 0x201, 0x20F};
 
-// Set mask MIDE bit: compare frame format against each filter's EXIDE=0.
-// autowp setFilterMask(false, mask) writes SID correctly but leaves MIDE=0.
-// Read/write mask SIDL in configuration mode: RXM0SIDL=0x21 / RXM1SIDL=0x25.
-void requireStandard(uint8_t address) {
-  SPI.beginTransaction(SPISettings(8000000, MSBFIRST, SPI_MODE0));
-  digitalWrite(10, LOW);
-  SPI.transfer(0x03); SPI.transfer(address);
-  const uint8_t value = SPI.transfer(0);
-  digitalWrite(10, HIGH);
-  digitalWrite(10, LOW);
-  SPI.transfer(0x02); SPI.transfer(address); SPI.transfer(value | 0x08);
-  digitalWrite(10, HIGH); SPI.endTransaction();
-}
-
 bool configure() {
   // Reset discards queued frames so modes have separate measurement windows.
   if (canController.reset() != MCP2515::ERROR_OK ||
@@ -33,7 +19,6 @@ bool configure() {
                                 MCP2515::RXF3, MCP2515::RXF4, MCP2515::RXF5};
   for (uint8_t i=0; i<6; i++)
     if (canController.setFilter(filters[i], false, filter) != MCP2515::ERROR_OK) return false;
-  requireStandard(0x21); requireStandard(0x25);
   if (canController.setNormalMode() != MCP2515::ERROR_OK) return false;
   for (uint8_t i=0; i<6; i++) counts[i] = 0;
   readCount = kept = dropped = unexpected = overflows = 0;

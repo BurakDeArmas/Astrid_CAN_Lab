@@ -47,10 +47,10 @@ altı filtrenin hepsine aynı hedef yazılır; kullanılmayan bir filtre arka ka
 gibi tüm trafiği kabul etmesin. RXB0 rollover açık kalır. RXM=00 kullanılır;
 geçerlilik kontrollerini de aşan receive-any debug modu kullanılmaz.
 
-Bu deney yalnız standart ID'ler içindir. Filtre EXIDE=0 ve maskelerde MIDE=1
-ile extended format donanımda dışlanır. Kütüphanenin standart maske API'si MIDE
-bitini ayarlamadığından kod config modunda iki SIDL maske register'ını okuyup
-MIDE bitini yazar. Veri baytı maskeleri sıfır kalır; payload filtrelenmez.
+Bu deney yalnız standart ID'ler içindir. RXM=00 ve filtre EXIDE=0 ile
+standart format seçilir. MCP2515 maskesinde MIDE biti yoktur; önceki
+sürümde bu adla yapılan etkisiz register yazımı 23 Eylül 2026'da kaldırıldı.
+Veri baytı maskeleri sıfır kalır; payload filtrelenmez.
 Extended ID ve remote frame ayrıntıları ayrı deneyde ele alınabilir.
 
 Filtreleme CAN hattındaki trafiği azaltmaz; Nano'nun tamponuna ve SPI üzerinden
