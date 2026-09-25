@@ -34,8 +34,16 @@ uygulanan komutu ve bağlantı durumunu 16x2 LCD'de gösterir.
 | [EXP09](docs/experiments/EXP09_CAN_Bit_Timing.md) | Kristal, CNF register ve bit zamanlaması | Üç sketch derlendi; genel tamamlanma bildirimi: 21 Eylül 2026; ayrı ölçüm/log aktarılmadı |
 | [EXP10](docs/experiments/EXP10_CAN_Protocol_DBC.md) | Byte sırası, signed değer, ölçekleme, DBC ve canlı okuyucu | Kullanıcı başarı bildirimi: 23 Eylül 2026; 54 DBC vektörü ve üç okuyucu testi geçti |
 | [EXP11](docs/experiments/EXP11_Standard_Extended_ID.md) | 11/29 bit kimlikler, STD/EXT formatları ve filtreleme | Üç sketch derlendi; kullanıcı tamamlanma bildirimi: 23 Eylül 2026; ayrı log aktarılmadı |
+| [EXP12](docs/experiments/EXP12_Command_Response_Retry.md) | Uygulama yanıtı, işlem numarası, timeout ve tekrarların ayıklanması | Üç sketch derlendi, önbellek testi geçti; kullanıcı tamamlanma bildirimi: 25 Eylül 2026; ayrı log aktarılmadı |
 
-## Son deney: EXP11 standart ve genişletilmiş kimlikler
+## Son deney: EXP12 komut ve yanıt
+
+Bir Uno LED komutu gönderir, ikinci Uno uygulama yanıtı üretir, Nano trafiği
+izler. Butonla yanıt bastırılarak tekrar gönderme ve belirsiz sonuç denenir.
+
+[EXP12 bağlantı ve test rehberi](docs/experiments/EXP12_Command_Response_Retry.md) · [Kodlar](firmware/exp12)
+
+## EXP11 standart ve genişletilmiş kimlikler
 
 İki Uno standart ve genişletilmiş çerçeveler yayınlar; Nano dört filtre moduyla
 formatı ve kimliği ayırır. Aynı sayısal ID iki formatta ayrı mesaj olarak izlenir.
