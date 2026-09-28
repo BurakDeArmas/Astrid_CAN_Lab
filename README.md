@@ -36,8 +36,17 @@ uygulanan komutu ve bağlantı durumunu 16x2 LCD'de gösterir.
 | [EXP11](docs/experiments/EXP11_Standard_Extended_ID.md) | 11/29 bit kimlikler, STD/EXT formatları ve filtreleme | Üç sketch derlendi; kullanıcı tamamlanma bildirimi: 23 Eylül 2026; ayrı log aktarılmadı |
 | [EXP12](docs/experiments/EXP12_Command_Response_Retry.md) | Uygulama yanıtı, işlem numarası, timeout ve tekrarların ayıklanması | Üç sketch derlendi, önbellek testi geçti; kullanıcı tamamlanma bildirimi: 25 Eylül 2026; ayrı log aktarılmadı |
 | [EXP13](docs/experiments/EXP13_CAN_Remote_Frame.md) | RTR, DLC ve istekten bağımsız veri yayını | Üç sketch derlendi; kullanıcı tamamlanma bildirimi: 29 Eylül 2026; ayrı log aktarılmadı |
+| [EXP14](docs/experiments/EXP14_Multi_Frame_Assembly.md) | Çok çerçeveli mesaj, parça sırası, timeout ve bütün halinde güncelleme | Üç sketch derlendi; birleştirme testi geçti; kullanıcı tamamlanma bildirimi: 29 Eylül 2026; ayrı log aktarılmadı |
 
-## Son deney: EXP13 RTR
+## Son deney: EXP14 çok çerçeveli mesaj
+
+24 baytlık mesaj altı çerçevede taşınır. Alıcı yalnız eksiksiz mesajı kullanır;
+orta veya son parça düşürüldüğünde önceki tamamlanmış mesaj korunur. Bu
+sabit uzunluklu eğitim protokolü ISO-TP uyumlu değildir.
+
+[EXP14 bağlantı ve test rehberi](docs/experiments/EXP14_Multi_Frame_Assembly.md) · [Kodlar](firmware/exp14)
+
+## EXP13 RTR
 
 Bir Uno uzak veri isteği gönderir, ikinci Uno pot değerini aynı ID ile veri
 çerçevesinde yayınlar. Nano RTR ve DATA farkını gösterir. Üç modda isteğe
