@@ -35,8 +35,17 @@ uygulanan komutu ve bağlantı durumunu 16x2 LCD'de gösterir.
 | [EXP10](docs/experiments/EXP10_CAN_Protocol_DBC.md) | Byte sırası, signed değer, ölçekleme, DBC ve canlı okuyucu | Kullanıcı başarı bildirimi: 23 Eylül 2026; 54 DBC vektörü ve üç okuyucu testi geçti |
 | [EXP11](docs/experiments/EXP11_Standard_Extended_ID.md) | 11/29 bit kimlikler, STD/EXT formatları ve filtreleme | Üç sketch derlendi; kullanıcı tamamlanma bildirimi: 23 Eylül 2026; ayrı log aktarılmadı |
 | [EXP12](docs/experiments/EXP12_Command_Response_Retry.md) | Uygulama yanıtı, işlem numarası, timeout ve tekrarların ayıklanması | Üç sketch derlendi, önbellek testi geçti; kullanıcı tamamlanma bildirimi: 25 Eylül 2026; ayrı log aktarılmadı |
+| [EXP13](docs/experiments/EXP13_CAN_Remote_Frame.md) | RTR, DLC ve istekten bağımsız veri yayını | Üç sketch derlendi; kullanıcı tamamlanma bildirimi: 29 Eylül 2026; ayrı log aktarılmadı |
 
-## Son deney: EXP12 komut ve yanıt
+## Son deney: EXP13 RTR
+
+Bir Uno uzak veri isteği gönderir, ikinci Uno pot değerini aynı ID ile veri
+çerçevesinde yayınlar. Nano RTR ve DATA farkını gösterir. Üç modda isteğe
+yanıt, yanıtsızlık ve istekten bağımsız periyodik yayın karşılaştırılır.
+
+[EXP13 bağlantı ve test rehberi](docs/experiments/EXP13_CAN_Remote_Frame.md) · [Kodlar](firmware/exp13)
+
+## EXP12 komut ve yanıt
 
 Bir Uno LED komutu gönderir, ikinci Uno uygulama yanıtı üretir, Nano trafiği
 izler. Butonla yanıt bastırılarak tekrar gönderme ve belirsiz sonuç denenir.
