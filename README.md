@@ -37,8 +37,17 @@ uygulanan komutu ve bağlantı durumunu 16x2 LCD'de gösterir.
 | [EXP12](docs/experiments/EXP12_Command_Response_Retry.md) | Uygulama yanıtı, işlem numarası, timeout ve tekrarların ayıklanması | Üç sketch derlendi, önbellek testi geçti; kullanıcı tamamlanma bildirimi: 25 Eylül 2026; ayrı log aktarılmadı |
 | [EXP13](docs/experiments/EXP13_CAN_Remote_Frame.md) | RTR, DLC ve istekten bağımsız veri yayını | Üç sketch derlendi; kullanıcı tamamlanma bildirimi: 29 Eylül 2026; ayrı log aktarılmadı |
 | [EXP14](docs/experiments/EXP14_Multi_Frame_Assembly.md) | Çok çerçeveli mesaj, parça sırası, timeout ve bütün halinde güncelleme | Üç sketch derlendi; birleştirme testi geçti; kullanıcı tamamlanma bildirimi: 29 Eylül 2026; ayrı log aktarılmadı |
+| [EXP15](docs/experiments/EXP15_ISOTP_Flow_Control.md) | ISO-TP temel SF/FF/CF/FC akışı, Block Size ve STmin | Üç sketch derlendi; durum makinesi testleri geçti; kullanıcı tamamlanma bildirimi alındı; ayrı log aktarılmadı |
 
-## Son deney: EXP14 çok çerçeveli mesaj
+## Son deney: EXP15 ISO-TP akış kontrolü
+
+Alıcı FC çerçevesiyle blok boyutu ve minimum CF aralığını bildirir. İki hız
+profili ve eksik FC timeout'u denenir. Bu, sınırlı bir eğitim uygulamasıdır;
+tam ISO 15765-2 uyumluluğu veya dış yığınla birlikte çalışabilirlik doğrulanmadı.
+
+[EXP15 bağlantı ve test rehberi](docs/experiments/EXP15_ISOTP_Flow_Control.md) · [Kodlar](firmware/exp15)
+
+## EXP14 çok çerçeveli mesaj
 
 24 baytlık mesaj altı çerçevede taşınır. Alıcı yalnız eksiksiz mesajı kullanır;
 orta veya son parça düşürüldüğünde önceki tamamlanmış mesaj korunur. Bu
