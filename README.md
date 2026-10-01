@@ -38,8 +38,17 @@ uygulanan komutu ve bağlantı durumunu 16x2 LCD'de gösterir.
 | [EXP13](docs/experiments/EXP13_CAN_Remote_Frame.md) | RTR, DLC ve istekten bağımsız veri yayını | Üç sketch derlendi; kullanıcı tamamlanma bildirimi: 29 Eylül 2026; ayrı log aktarılmadı |
 | [EXP14](docs/experiments/EXP14_Multi_Frame_Assembly.md) | Çok çerçeveli mesaj, parça sırası, timeout ve bütün halinde güncelleme | Üç sketch derlendi; birleştirme testi geçti; kullanıcı tamamlanma bildirimi: 29 Eylül 2026; ayrı log aktarılmadı |
 | [EXP15](docs/experiments/EXP15_ISOTP_Flow_Control.md) | ISO-TP temel SF/FF/CF/FC akışı, Block Size ve STmin | Üç sketch derlendi; durum makinesi testleri geçti; kullanıcı tamamlanma bildirimi alındı; ayrı log aktarılmadı |
+| [EXP16](docs/experiments/EXP16_UDS_Read_Write_NRC.md) | UDS okuma/yazma, pozitif/negatif yanıt ve NRC | Üç sketch derlendi; servis testleri geçti; kullanıcı tamamlanma bildirimi: 1 Ekim 2026; ayrı log aktarılmadı |
 
-## Son deney: EXP15 ISO-TP akış kontrolü
+## Son deney: EXP16 UDS uygulama yanıtı
+
+Tester bir örnek ayarı okur/yazar; ECU geçersiz değer veya uygun olmayan
+koşulda negatif yanıt verir. ISO-TP Single Frame içinde iki UDS servisinin
+sınırlı eğitim uygulaması kullanılır.
+
+[EXP16 bağlantı ve test rehberi](docs/experiments/EXP16_UDS_Read_Write_NRC.md) · [Kodlar](firmware/exp16)
+
+## EXP15 ISO-TP akış kontrolü
 
 Alıcı FC çerçevesiyle blok boyutu ve minimum CF aralığını bildirir. İki hız
 profili ve eksik FC timeout'u denenir. Bu, sınırlı bir eğitim uygulamasıdır;
